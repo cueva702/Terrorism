@@ -11,16 +11,81 @@ library(htmlwidgets)
 usaTerror20002016 <- read.csv('USATerrorists20002016.csv')
 View(usaTerror20002016)
 
-# Show first 32 rows from the `quakes` dataset
-usaTerror2000<-leaflet(data = usaTerror20002016[1:32,]) %>% addTiles() %>%
-  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(summary))
 
-# Show first 20 rows from the `quakes` dataset
-usaTerror2001<- leaflet(data = usaTerror20002016[32:73,]) %>% addTiles() %>%
-  addMarkers(~longitude, ~latitude)
-
+#All 2000-2016 USA terror data
 usaTerrorAll2000Yrs <- leaflet(data = usaTerror20002016) %>% addTiles() %>%
-  addMarkers(~longitude, ~latitude)
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
 
-leaflet(data = quakes[1:20,]) %>% addTiles() %>%
-  addMarkers(~long, ~lat, popup = ~as.character(mag), label = ~as.character(mag))
+
+# The year 2000 USA Terrorist data
+usaTerror2000<-leaflet(data = usaTerror20002016[1:32,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2001 USA Terrorist data
+usaTerror2001<- leaflet(data = usaTerror20002016[32:73,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2002 USA Terrorist data
+usaTerror2002<- leaflet(data = usaTerror20002016[74:106,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2003 USA Terrorist data
+usaTerror2003 <- leaflet(data = usaTerror20002016[107:138,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2004 USA Terrorist data
+usaTerror2004 <- leaflet(data = usaTerror20002016[139:147,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2005 USA Terrorist data
+usaTerror2005 <- leaflet(data = usaTerror20002016[148:167,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2006 USA Terrorist data
+usaTerror2006 <- leaflet(data = usaTerror20002016[168:173,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2007 USA Terrorist data
+usaTerror2007 <- leaflet(data = usaTerror20002016[174:182,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2008 USA Terrorist data
+usaTerror2008 <- leaflet(data = usaTerror20002016[183:200,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2009 USA Terrorist data
+usaTerror2009 <- leaflet(data = usaTerror20002016[201:210,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2010 USA Terrorist data
+usaTerror2010 <- leaflet(data = usaTerror20002016[211:227,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2011 USA Terrorist data
+usaTerror2011 <- leaflet(data = usaTerror20002016[228:237,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2012 USA Terrorist data
+usaTerror2012 <- leaflet(data = usaTerror20002016[238:256,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2013 USA Terrorist data
+usaTerror2013 <- leaflet(data = usaTerror20002016[257:276,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2014 USA Terrorist data
+usaTerror2014 <- leaflet(data = usaTerror20002016[277:302,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2015 USA Terrorist data
+usaTerror2015 <- leaflet(data = usaTerror20002016[303:341,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+# The year 2016 USA Terrorist data
+usaTerror2016 <- leaflet(data = usaTerror20002016[342:402,]) %>% addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~as.character(summary), label = ~as.character(city))
+
+
+
+
+
