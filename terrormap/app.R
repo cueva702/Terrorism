@@ -22,7 +22,8 @@ ui <- fluidPage(
   # Show a plot of the generated distribution
   mainPanel(
     tabsetPanel(type = "tabs", 
-                tabPanel('Terrorist attacks in USA 2000-2016 Map', leafletOutput("mymap")),
+                tabPanel('The Number of Terrorist Attacks in USA  by Year', tableOutput("table")),
+                tabPanel('Terrorist Attacks in USA 2000-2016 Map', leafletOutput("mymap")),
                 tabPanel('Terrorist Attacks in USA 1983-1999 Map', leafletOutput("usa8090_map")),
                 tabPanel('Terrorist Attacks in USA 1970-1982 Map', leafletOutput("usa7080_map"))
     )))
@@ -32,6 +33,11 @@ ui <- fluidPage(
 
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
+
+  output$table <- renderTable({
+   AttacksperYearinUSA
+    
+   })
   
   output$mymap <- renderLeaflet({
     leaflet(data = usaTerror20002016) %>% addTiles() %>%

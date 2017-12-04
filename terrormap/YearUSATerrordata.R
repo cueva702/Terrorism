@@ -17,3 +17,8 @@ View(usaTerror19991983)
 usaTerror19701982 <- read.csv('19701982USATerrorAttacks.csv')
 View(usaTerror19701982)
 
+year <- read.csv('AttacksperYearinUSA.csv')
+View(year)
+
+
+
