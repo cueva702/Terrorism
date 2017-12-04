@@ -1,0 +1,12 @@
+name: terrorattacksusa19702016map
+title: terrorAttacksUSA19702016map
+username:
+account: desposato
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 243602
+bundleId: 1112801
+url: https://desposato.shinyapps.io/terrorattacksusa19702016map/
+when: 1512345325.7355
+asMultiple: FALSE
+asStatic: FALSE
