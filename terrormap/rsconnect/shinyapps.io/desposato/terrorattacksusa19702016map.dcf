@@ -5,8 +5,8 @@ account: desposato
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 243602
-bundleId: 1114541
+bundleId: 1115544
 url: https://desposato.shinyapps.io/terrorattacksusa19702016map/
-when: 1512406262.1423
+when: 1512442664.8308
 asMultiple: FALSE
 asStatic: FALSE

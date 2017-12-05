@@ -9,7 +9,7 @@
 library(leaflet)
 library(shiny)
 
-# Define UI for application that draws a histogram
+# Define UI for application
 ui <- fluidPage(
   
   # Application title
@@ -22,7 +22,7 @@ ui <- fluidPage(
   # Show a plot of the generated distribution
   mainPanel(
     tabsetPanel(type = "tabs", 
-                tabPanel('The Number of Terrorist Attacks in USA  by Year', tableOutput("table")),
+                tabPanel('Summary of Terrorist Attacks in USA 1970-2016'),
                 tabPanel('Terrorist Attacks in USA 2000-2016 Map', leafletOutput("mymap")),
                 tabPanel('Terrorist Attacks in USA 1983-1999 Map', leafletOutput("usa8090_map")),
                 tabPanel('Terrorist Attacks in USA 1970-1982 Map', leafletOutput("usa7080_map"))
@@ -31,10 +31,8 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
 
-  output$table <- renderTable({
-   AttacksperYearinUSA
-    
-   })
+  #Code for Summary goes here  
+
   
   output$mymap <- renderLeaflet({
     leaflet(data = usaTerror20002016) %>% addTiles() %>%

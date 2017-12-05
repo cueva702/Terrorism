@@ -7,7 +7,7 @@ library(plyr)
 library(dplyr)
 library(htmltools)
 library(htmlwidgets)
-
+library(readr)
 usaTerror20002016 <- read.csv('USATerrorists20002016.csv')
 View(usaTerror20002016)
 
@@ -17,8 +17,7 @@ View(usaTerror19991983)
 usaTerror19701982 <- read.csv('19701982USATerrorAttacks.csv')
 View(usaTerror19701982)
 
-year <- read.csv('AttacksperYearinUSA.csv')
-View(year)
+
 
 
 
