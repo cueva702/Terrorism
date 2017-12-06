@@ -1,0 +1,274 @@
+---
+title: "Summary of Terrorist Attacks in USA Data"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## USA State Terrorist Attack Data 1970-2016
+
+```{r echo=FALSE, eval=TRUE, warning=FALSE,message=FALSE}
+
+library(ggmap)
+
+library(mapproj)
+
+library(ggplot2)
+
+library(maps)
+
+library(plyr)
+
+library(dplyr)
+
+dataset<-read.csv("terrormap/TotalTerrorAttacksinUSA.csv")
+
+info_function <- function(dataset) {
+
+
+CA<- dataset %>%
+
+  filter( provstate == "California") 
+
+  numinCA = nrow(CA)
+
+NY <- dataset %>%
+
+  filter( provstate == "New York") 
+
+  numinNY = nrow(NY)
+
+PR <- dataset %>%
+
+  filter( provstate == "Puerto Rico") 
+
+  numinPR = nrow(PR)
+
+ FL <- dataset %>%
+
+  filter( provstate == "Florida") 
+
+  numinFL = nrow(FL)
+   
+  IL <- dataset %>%
+
+  filter( provstate == "Illinois") 
+
+  numinIL = nrow(IL)
+  
+  WA <- dataset %>%
+
+  filter( provstate == "Washington") 
+
+  numinWA = nrow(WA)
+  
+  ret <- list()
+
+  ret$numinCA <- nrow(CA)
+  ret$numinNY <- nrow(NY)
+  ret$numinPR <- nrow(PR)
+  ret$numinFL <- nrow(FL) 
+  ret$numinIL <- nrow(IL)
+  ret$numinWA <- nrow(WA)
+  
+  return(ret)
+
+ }
+
+
+```
+
+
+
+```{r echo=FALSE, eval=TRUE, warning=FALSE,message=FALSE}
+
+info_function(dataset)
+
+
+
+```
+
+
+## USA Weapon Type Data 1970-2016
+
+```{r echo=FALSE, eval=TRUE, warning=FALSE,message=FALSE}
+
+library(ggmap)
+
+library(mapproj)
+
+library(ggplot2)
+
+library(maps)
+
+library(plyr)
+
+library(dplyr)
+
+dataset<-read.csv("terrormap/TotalTerrorAttacksinUSA.csv")
+
+info_function <- function(dataset) {
+
+
+Explosive<- dataset %>%
+
+  filter( weaptype1_txt == "Explosives/Bombs/Dynamite") 
+
+  numinExplosive = nrow(Explosive)
+
+TargetBusiness <- dataset %>%
+
+  filter( targtype1_txt == "Business") 
+
+  numinTargetBusiness = nrow(TargetBusiness)
+
+TargetGovernment <- dataset %>%
+
+  filter( targtype1_txt == "Government (General)") 
+
+  numinTargetGovernment = nrow(TargetGovernment)
+  
+TargetPrivateCitizen <- dataset %>%
+
+  filter( targtype1_txt == "Private Citizens & Property") 
+
+  numinTargetPrivateCitizen = nrow(TargetPrivateCitizen)
+  
+TargetAbortionRelated <- dataset %>%
+
+  filter( targtype1_txt == "Abortion Related") 
+
+  numinTargetAbortionRelated = nrow(TargetAbortionRelated)  
+  
+TargetMilitary <- dataset %>%
+
+  filter( targtype1_txt == "Military") 
+
+  numinTargetMilitary = nrow(TargetMilitary)    
+
+  TargetEducation <- dataset %>%
+
+  filter( targtype1_txt == "Educational Institution") 
+
+  numinTargetEducation = nrow(TargetEducation)   
+  
+  
+  ret <- list()
+
+  ret$numinExplosive <- nrow(Explosive)
+  ret$numinTargetBusiness <- nrow(TargetBusiness)
+  ret$numinTargetGovernment <- nrow(TargetGovernment)
+  ret$numinTargetPrivateCitizen <- nrow(TargetPrivateCitizen)
+  ret$numinTargetAbortionRelated <- nrow(TargetAbortionRelated)
+  ret$numinTargetMilitary <- nrow(TargetMilitary)
+  ret$numinTargetEducation <- nrow(TargetEducation) 
+  
+  return(ret)
+
+ }
+
+
+```
+
+
+
+```{r echo=FALSE, eval=TRUE, warning=FALSE,message=FALSE}
+
+info_function(dataset)
+
+
+
+```
+
+
+## USA Terrorist Attacks per Years 1970,1980,1990,2000,2011, and 2016
+
+```{r echo=FALSE, eval=TRUE, warning=FALSE,message=FALSE}
+
+library(ggmap)
+
+library(mapproj)
+
+library(ggplot2)
+
+library(maps)
+
+library(plyr)
+
+library(dplyr)
+
+dataset<-read.csv("terrormap/TotalTerrorAttacksinUSA.csv")
+
+info_function <- function(dataset) {
+
+
+Year1970<- dataset %>%
+
+  filter( iyear == "1970") 
+
+  numinYear1970 = nrow(Year1970)
+ 
+Year1980<- dataset %>%
+
+  filter( iyear == "1980") 
+
+  numinYear1980 = nrow(Year1980)  
+  
+Year1990<- dataset %>%
+
+  filter( iyear == "1990") 
+
+  numinYear1990 = nrow(Year1990)
+  
+Year2000<- dataset %>%
+
+  filter( iyear == "2000") 
+
+  numinYear2000 = nrow(Year2000)
+  
+Year2011<- dataset %>%
+
+  filter( iyear == "2011") 
+
+  numinYear2011 = nrow(Year2011)  
+
+Year2013<- dataset %>%
+
+  filter( iyear == "2013") 
+
+  numinYear2013 = nrow(Year2013) 
+  
+  
+Year2016 <- dataset %>%
+
+  filter( iyear == "2016") 
+
+  numinYear2016 = nrow(Year2016)     
+    
+  ret <- list()
+
+  ret$numinYear1970 <- nrow(Year1970)
+  ret$numinYear1980 <- nrow(Year1980) 
+  ret$numinYear1990 <- nrow(Year1990) 
+  ret$numinYear2000 <- nrow(Year2000) 
+  ret$numinYear2011 <- nrow(Year2011) 
+  ret$numinYear2013 <- nrow(Year2013) 
+  ret$numinYear2016 <- nrow(Year2016) 
+  
+  return(ret)
+
+ }
+
+
+```
+
+
+
+```{r echo=FALSE, eval=TRUE, warning=FALSE,message=FALSE}
+
+info_function(dataset)
+
+
